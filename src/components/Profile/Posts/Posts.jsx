@@ -1,3 +1,4 @@
+import Post from "./Post/Post";
 import style from "./Posts.module.css";
 
 const Posts = () => {
@@ -8,49 +9,28 @@ const Posts = () => {
         <p className={style.new}>new post!</p>
             <div className={style.flex}>
 
-                <div className={`${style.item} ${style.active} ${style.left}`}>
-                    <div className={style.info}>
-                        <p className={style.name}>@aokijiii</p>
-                        <p className={style.date}>17.02.2022</p>
-                    </div>
-                    <div className={style.text}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis pariatur non sunt quidem quaerat voluptatibus, ab placeat. Veritatis repellendus ullam mollitia praesentium provident quisquam quaerat earum corrupti molestiae commodi?
-                    </div>
-                </div>
-
-                <div className={style.item}>
-                    <div className={style.info}>
-                        <p className={style.name}>@aokijiii</p>
-                        <p className={style.date}>07.02.2022</p>
-                    </div>
-                    <div className={style.text}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis pariatur non sunt quidem quaerat voluptatibus, ab placeat.
-                    </div>
-                </div>
+            <Post 
+                class={`${style.active} ${style.left}`}
+                date="03.02.2022"
+                text="Lorem Ipsum dolor sit amet, consectetur adipiscing elit"
+            />
+            <Post 
+                date="27.01.2022"
+            />
 
             </div>
 
             <div className={style.flex}>
                 
-                <div className={`${style.item} ${style.left}`}>
-                    <div className={style.info}>
-                        <p className={style.name}>@aokijiii</p>
-                        <p className={style.date}>05.02.2022</p>
-                    </div>
-                    <div className={style.text}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis pariatur non sunt quidem quaerat voluptatibus, ab placeat. Veritatis repellendus ullam mollitia praesentium provident quisquam quaerat earum corrupti molestiae commodi?
-                    </div>
-                </div>
-
-                <div className={style.item}>
-                    <div className={style.info}>
-                        <p className={style.name}>@aokijiii</p>
-                        <p className={style.date}>21.01.2022</p>
-                    </div>
-                    <div className={style.text}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis pariatur non sunt quidem quaerat voluptatibus. Veritatis repellendus ullam mollitia praesentium provident quisquam quaerat earum corrupti molestiae commodi? Maxime debitis pariatur non sunt quidem quaerat voluptatibus.
-                    </div>
-                </div>
+            <Post
+                class={`${style.left}`}
+                date="21.01.2022" 
+                text="Lorem Ipsum dolor sit amet, consectetur adipiscing elit"
+            />
+            <Post 
+                date="15.01.2022"
+                text="Lorem Ipsum dolor sit amet, consectetur adipiscing elit"
+            />
 
             </div>
 

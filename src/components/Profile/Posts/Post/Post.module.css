@@ -1,0 +1,41 @@
+.item {
+    border: 1px solid rgb(207, 210, 253);
+    padding: 10px;
+}
+
+.info {
+    display: flex;
+    margin-bottom: 20px;
+}
+  
+.info:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+  
+    margin: 10px 0 0 10px;
+  
+    background-color: rgb(207, 210, 253);
+}
+  
+.name {
+    color: rgb(98, 98, 98);
+    font-weight: 400;
+    margin: 0 10px 0 0;
+    font-size: 18px;
+
+    cursor: pointer
+}
+  
+.date {
+    margin: auto 0;
+  
+    font-size: 14px;
+    color: #ccc
+}
+  
+.text {
+    width: 100%;
+    color: rgb(98, 98, 98)
+} 
