@@ -1,4 +1,4 @@
-import Posts from "../Posts/Posts"
+import Posts from "./Posts/Posts"
 import style from "./Profile.module.css"
 
 const Profile = () => { 
