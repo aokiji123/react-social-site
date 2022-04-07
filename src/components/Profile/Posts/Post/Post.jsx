@@ -1,7 +1,6 @@
 import style from "./Post.module.css"
 
 const Post = (props) => {
-    console.log(props)
     return (
         <div className={`${style.item} ${props.class}`}>
             <div className={style.info}>
