@@ -12,6 +12,7 @@
     color: rgb(98, 98, 98);
     font-size: 22px;
     line-height: 1.4;
+    padding: 3px;
 }
 
 .item.active {

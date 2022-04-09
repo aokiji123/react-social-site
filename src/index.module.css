@@ -23,3 +23,7 @@ ul, ol {
     grid-template-columns: 2fr 18fr;
     grid-gap: 10px;
 }
+
+.grid {
+    grid-area: content;
+}

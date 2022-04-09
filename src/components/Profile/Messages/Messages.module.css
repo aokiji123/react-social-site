@@ -1,0 +1,50 @@
+.block {
+    display: flex;
+}
+
+.block__people {
+    padding-right: 40px;
+}
+
+.name {
+    color: rgb(29, 29, 29);
+    font-weight: normal;
+    padding: 3px;
+
+    cursor: pointer
+}
+
+.name:hover {
+    background-color: rgb(228, 230, 255);   
+}
+
+.block__text {
+    width: 100%;
+    border: 2px solid rgb(228, 230, 255);
+
+    padding: 40px 60px;
+}
+
+.block__text.right {
+   justify-content: right;
+}
+
+
+.message {
+    display: flex;
+
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(228, 230, 255);
+    margin-bottom: 20px;
+
+    max-width: 30%;
+}
+
+.text {
+    margin-right: 10px;
+}
+
+.date {
+    opacity: 0.3
+}
