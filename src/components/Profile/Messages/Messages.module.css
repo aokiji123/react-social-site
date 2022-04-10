@@ -14,21 +14,43 @@
     cursor: pointer
 }
 
-.name:hover {
-    background-color: rgb(228, 230, 255);   
+.name.active {
+    color: black;
+    font-weight: bold;
+}
+
+.name:hover{
+    background-color: rgb(228, 230, 255);
 }
 
 .block__text {
     width: 100%;
     border: 2px solid rgb(228, 230, 255);
 
-    padding: 40px 60px;
+    padding: 40px 65px;
+
+    position: relative;
 }
 
-.block__text.right {
-   justify-content: right;
+.me {
+    position: absolute;
+    top: 90px;
+    left: 15px;
+    z-index: 1;
 }
 
+.friend {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    z-index: 1;
+}
+
+.block__text img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 
 .message {
     display: flex;
@@ -36,15 +58,18 @@
     padding: 10px;
     border-radius: 10px;
     background-color: rgb(228, 230, 255);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
-    max-width: 30%;
+    width: 35%;
+}
+
+.message:after {
+    content: "24.02";
+    opacity: 0.3;
+
+    margin: auto 0;
 }
 
 .text {
     margin-right: 10px;
-}
-
-.date {
-    opacity: 0.3
 }
