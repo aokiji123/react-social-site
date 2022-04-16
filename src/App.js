@@ -5,28 +5,26 @@ import Header from "./components/Header//Header"
 import Nav from "./components/Nav/Nav"
 import Profile from "./components/Profile/Profile"
 import Messages from './components/Profile/Messages/Messages'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
-const App = () => {
+const App = (props) => {
 	return (
-		<BrowserRouter>
-			<div className={styles.page}>
+		<div className={styles.page}>
 
-				<Header/>
+			<Header/>
 
-				<Nav/>
+			<Nav state={props.state.nav}/>
 
-				<div className={styles.grid}>
-					<Routes>
-						<Route path="" element={<Profile/>}/>
-						<Route path="/profile" element={<Profile/>}/>
-						<Route path="/messages" element={<Messages/>}/>
-					</Routes>
-				</div>
-				
+			<div className={styles.grid}>
+				<Routes>
+					<Route path="" element={<Profile state={props.state.profile}/>}/>
+					<Route path="/profile/*" element={<Profile state={props.state.profile}/>}/>
+					<Route path="/messages/*" element={<Messages state={props.state.messages}/>}/>
+				</Routes>
 			</div>
-		</BrowserRouter>
+			
+		</div>
 	)
-}
+} 
 
 export default App;

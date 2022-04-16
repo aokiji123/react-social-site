@@ -1,7 +1,7 @@
 import Posts from "./Posts/Posts"
 import style from "./Profile.module.css"
 
-const Profile = () => { 
+const Profile = (props) => { 
     
     return (
         <div className={style.content}>
@@ -16,7 +16,7 @@ const Profile = () => {
                 </p>
             </div>
 
-            <Posts/>
+            <Posts postData={props.state.postData}/>
 
         </div>
     )

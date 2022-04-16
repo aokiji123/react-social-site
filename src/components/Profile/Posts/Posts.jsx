@@ -1,39 +1,22 @@
 import Post from "./Post/Post";
 import style from "./Posts.module.css";
 
-const Posts = () => {
+const Posts = (props) => {
+    
     return (
 
         <div className={style.posts}>
         <h2>My posts</h2>
         <p className={style.new}>new post!</p>
             <div className={style.flex}>
-
-            <Post 
-                class={`${style.active} ${style.left}`}
-                date="03.02.2022"
-                text="Lorem Ipsum dolor sit amet, consectetur adipiscing elit"
-            />
-            <Post 
-                date="27.01.2022"
-            />
-
+                <Post className={`${style.active} ${style.left}`} text={props.postData[0].text} date={props.postData[0].date}/>
+                <Post text={props.postData[1].text} date={props.postData[1].date}/>
             </div>
 
             <div className={style.flex}>
-                
-            <Post
-                class={`${style.left}`}
-                date="21.01.2022" 
-                text="Lorem Ipsum dolor sit amet, consectetur adipiscing elit"
-            />
-            <Post 
-                date="15.01.2022"
-                text="Lorem Ipsum dolor sit amet, consectetur adipiscing elit"
-            />
-
+                <Post className={`${style.left}`} text={props.postData[2].text} date={props.postData[2].date}/>
+                <Post text={props.postData[3].text} date={props.postData[3].date}/>
             </div>
-
         </div>
     
     )

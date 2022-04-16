@@ -1,19 +1,17 @@
-import { NavLink } from "react-router-dom"
 import style from "./Nav.module.css"
+import NavItem from "./NavItem/NavItem"
 
-const Nav = () => {
+const Nav = (props) => {
+
+    let links = props.state.navData.map((link) => <NavItem name={link.name} url={link.url} />)
 
     return (
 
         <nav className="nav">
             <ul className={style.group}>
-                <li><NavLink className={navData => navData.isActive ? style.active : style.item} to="/profile">Profile</NavLink></li>
-                <li><NavLink className={navData => navData.isActive ? style.active : style.item} to="/messages">Messages</NavLink></li>
-                <li><a className={style.item} href="s#">News</a></li>
-                <li><a className={style.item} href="s#">Music</a></li>
-            </ul>
-            <ul className={style.group}>
-                <li><a className={style.item} href="s#">Settings</a></li>
+
+                { links }
+
             </ul>
         </nav>
 

@@ -1,0 +1,35 @@
+.my__photo {
+    position: absolute;
+    top: 88px;
+    left: 15px;
+    z-index: 1;
+}
+
+.friend {
+    position: absolute;
+    top: 38px;
+    left: 15px;
+    z-index: 1;
+}
+
+.message {
+    display: flex;
+
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(228, 230, 255);
+    margin-bottom: 10px;
+
+    width: 35%;
+}
+
+.message:after {
+    content: "22:03";
+    opacity: 0.3;
+
+    margin: auto 0;
+}
+
+.text {
+    margin-right: 10px;
+}
