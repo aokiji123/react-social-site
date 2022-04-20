@@ -1,16 +1,21 @@
 import style from "./Post.module.css"
 
 const Post = (props) => {
+
+    let user = () => {
+        alert("aoikijiii")
+    }
+
     return (
-        <div className={`${style.item} ${props.className}`}>
+        <section className={style.item}>
             <div className={style.info}>
-                <p className={style.name}>@aokijiii</p>
+                <p onClick={ user } className={style.name}>@aokijiii</p>
                 <p className={style.date}>{props.date}</p>
             </div>
             <div className={style.text}>
                 {props.text}
             </div>
-        </div>
+        </section>
     )
 }
 

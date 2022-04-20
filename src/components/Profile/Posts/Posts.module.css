@@ -1,26 +1,12 @@
-/* POSTS */
 .posts h2 {
     color: rgb(98, 98, 98)
 }
 
 .flex {
     display: flex;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
-
-.new {
-    margin: 0;
-  
-    font-size: 12px;
-    color: rgb(165, 171, 246);
-  
-    position: absolute;
-    display: block;
-    top: 390px;
-    right: 790px;
-    z-index: 1;
-}
-
+/* 
 .active {
     border: 3px solid rgb(207, 210, 253);
   
@@ -29,4 +15,4 @@
 
 .left {
     margin-right: 15px;
-}
+} */
