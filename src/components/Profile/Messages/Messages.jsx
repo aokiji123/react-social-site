@@ -1,18 +1,23 @@
 import Message from "./Message/Message"
 import Person from "./Person/Person"
-
 import style from "./Messages.module.css"
+import React from "react"
 
 const Messages = (props) => {
     
     let people = props.state.peopleData.map((person) => <Person name={person.name} url={person.url}/> )
     let messages = props.state.messageData.map((message) => <Message text={message.text}/>)
 
+    let newMessage = React.createRef()
 
-    // <Message image="images/avatar1.png" text={messageData[0].text}/>,
-    // <Message image="images/avatar.png" text={messageData[1].text}/>,
-    // <Message image="images/avatar.png" text={messageData[2].text}/>,
-    // <Message image="images/avatar.png" text={messageData[3].text}/>
+    let addMessage = () => {
+        props.addMessage()
+    }
+
+    let onMessageChange = () => {
+        let text = newMessage.current.value
+        props.updateNewMessageData(text)
+    }
 
     return (
         <div>      
@@ -27,22 +32,13 @@ const Messages = (props) => {
 
                 <div className={style.block__text}>
                     
+                    {/* <img className={style.my__photo} src="images/avatar.png" alt="Avatar"/>*/}
                     { messages }
-
-                    {/* <img className={style.my__photo} src="images/avatar.png" alt="Avatar"/>
-                    <div className={style.message}>
-                        <div className={style.text}>hello</div>
-                        <div className={style.date}></div>
-                    </div>
-
-                    <div className={style.message}>
-                        <div className={style.text}>well i'm kinda tired, try to take some rest watching youtube</div>
-                    </div>
-
-                    <div className={style.message}>
-                        <div className={style.text}>today was studying a lot</div>
-                        <div className={style.date}></div>
-                    </div> */}
+                    
+                    <form action="" type="submit">
+                        <input className="input" type="text" placeholder="type smth" ref={newMessage} value={props.state.newMessageData} onChange={onMessageChange}/>
+                        <button onClick={addMessage} className="button" type="button">&#10003;</button>
+                    </form>
                     
                 </div>
 

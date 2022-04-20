@@ -40,3 +40,41 @@ ul {
     height: 40px;
     border-radius: 50%;
 }
+
+
+input {
+    margin-top: 20px;
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+
+    border: 1px solid #999999;
+    border-radius: 5px;
+
+    outline-color: rgb(207, 210, 253);
+}
+
+input:hover {
+    border-color: rgb(207, 210, 253);
+}
+
+button {
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+
+    outline-color: rgb(207, 210, 253);
+    border: 1px solid #999999;
+    border-radius: 5px;
+
+    background-color: #fff;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+button:hover {
+    border-color: rgb(207, 210, 253);
+}
