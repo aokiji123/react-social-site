@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import style from "../Nav.module.css"
+import style from "./NavItem.module.css"
 
 const NavItem = (props) => {
 

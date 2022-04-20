@@ -3,7 +3,7 @@ import NavItem from "./NavItem/NavItem"
 
 const Nav = (props) => {
 
-    let links = props.state.navData.map((link) => <NavItem name={link.name} url={link.url} />)
+    let links = props.state.navData.map((link) => <NavItem name={link.name} url={link.url}/>)
 
     return (
 

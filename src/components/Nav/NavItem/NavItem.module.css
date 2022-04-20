@@ -1,0 +1,30 @@
+.item {
+    text-decoration: none;
+    color: rgb(98, 98, 98);
+    font-size: 22px;
+    line-height: 1.4;
+    padding: 3px;
+    letter-spacing: 1px;
+}
+
+.item.active {
+    color: rgb(0, 0, 0);
+}
+
+.item:hover,
+.item:focus {
+    background-color: rgb(228, 230, 255);
+    outline: none;
+}
+
+.active {
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    padding: 1px;
+    color: rgb(0, 0, 0);
+
+    background-color:  rgb(228, 230, 255);
+    outline: none;
+}
