@@ -3,17 +3,17 @@ import Posts from "./Posts/Posts"
 import ProfilePerson from "./ProfilePerson"
 import style from "./Profile.module.css"
 
-const Profile = (props) => { 
+const Profile = (props) => {
     
     let newPost = React.createRef()
 
     let addPost = () => {
-        props.addPost()
+        props.dispatch({ type: 'ADD-POST' })
     }
 
     let onPostChange = () => {
         let text = newPost.current.value
-        props.updateNewPostData(text)
+        props.dispatch({ type: 'UPDATE-NEW-POST-DATA', text })
     }
 
     return (

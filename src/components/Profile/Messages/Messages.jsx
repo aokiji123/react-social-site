@@ -1,7 +1,7 @@
+import React from "react"
 import Message from "./Message/Message"
 import Person from "./Person/Person"
 import style from "./Messages.module.css"
-import React from "react"
 
 const Messages = (props) => {
     
@@ -11,12 +11,12 @@ const Messages = (props) => {
     let newMessage = React.createRef()
 
     let addMessage = () => {
-        props.addMessage()
+        props.dispatch({ type: 'ADD-MESSAGE' })
     }
 
     let onMessageChange = () => {
         let text = newMessage.current.value
-        props.updateNewMessageData(text)
+        props.dispatch({ type: 'UPDATE-NEW-MESSAGE-DATA', text })
     }
 
     return (
