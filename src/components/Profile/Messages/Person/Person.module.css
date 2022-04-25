@@ -20,6 +20,11 @@
     font-weight: bold;
 }
 
-.name:hover{
+.name:hover,
+.name:focus {
     background-color: rgb(228, 230, 255);
+}
+
+.name:focus {
+    outline: none;
 }
