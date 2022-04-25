@@ -18,18 +18,12 @@ const App = (props) => {
 
 			<div className={styles.grid}>
 				<Routes>
-					<Route path="" element={<Profile
-											state={props.state.profile}
-											updateNewPostData={props.updateNewPostData}
-											addPost={props.addPost} />}/>
 					<Route path="/profile/*" element={<Profile
 													    state={props.state.profile}
-														updateNewPostData={props.updateNewPostData}
-														addPost={props.addPost}/>}/>
+														dispatch={props.dispatch}/>}/>
 					<Route path="/messages/*" element={<Messages
 														state={props.state.messages}
-														updateNewMessageData={props.updateNewMessageData}
-														addMessage={props.addMessage}/>}/>
+														dispatch={props.dispatch}/>}/>
 				</Routes>
 			</div>
 			
