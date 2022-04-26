@@ -2,6 +2,7 @@ import React from "react"
 import Posts from "./Posts/Posts"
 import ProfilePerson from "./ProfilePerson"
 import style from "./Profile.module.css"
+
 import { addPostActionCreator, updateNewPostDataActionCreator } from "../../redux/state"
 
 const Profile = (props) => {
