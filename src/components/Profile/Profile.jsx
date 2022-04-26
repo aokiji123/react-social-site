@@ -3,7 +3,7 @@ import Posts from "./Posts/Posts"
 import ProfilePerson from "./ProfilePerson"
 import style from "./Profile.module.css"
 
-import { addPostActionCreator, updateNewPostDataActionCreator } from "../../redux/state"
+import { addPostActionCreator, updateNewPostDataActionCreator } from "../../redux/store"
 
 const Profile = (props) => {
 
