@@ -3,20 +3,20 @@ import Message from "./Message/Message"
 import Person from "./Person/Person"
 import style from "./Messages.module.css"
 
+import { addMessageActionCreator, updateNewMessageDataActionCreator } from "../../../redux/state"
+
 const Messages = (props) => {
     
     let people = props.state.peopleData.map((person) => <Person name={person.name} url={person.url}/> )
     let messages = props.state.messageData.map((message) => <Message text={message.text}/>)
 
-    let newMessage = React.createRef()
-
     let addMessage = () => {
-        props.dispatch({ type: 'ADD-MESSAGE' })
+        props.dispatch(addMessageActionCreator())
     }
 
-    let onMessageChange = () => {
-        let text = newMessage.current.value
-        props.dispatch({ type: 'UPDATE-NEW-MESSAGE-DATA', text })
+    let onMessageChange = (event) => {
+        let text = event.target.value
+        props.dispatch(updateNewMessageDataActionCreator(text))
     }
 
     return (
@@ -36,7 +36,7 @@ const Messages = (props) => {
                     { messages }
                     
                     <form action="" type="submit">
-                        <input className="input" type="text" placeholder="type smth" ref={newMessage} value={props.state.newMessageData} onChange={onMessageChange}/>
+                        <input className="input" type="text" placeholder="type smth" value={props.state.newMessageData} onChange={onMessageChange}/>
                         <button onClick={addMessage} className="button" type="button">&#10003;</button>
                     </form>
                     
