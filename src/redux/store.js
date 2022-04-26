@@ -1,3 +1,11 @@
+import messagesReducer from "./messages-reducer"
+import profileReducer from "./profile-reducer"
+
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_DATA = 'UPDATE-NEW-POST-DATA'
+const ADD_MESSAGE = 'ADD-MESSAGE'
+const UPDATE_NEW_MESSAGE_DATA = 'UPDATE-NEW-MESSAGE-DATA'
+
 let store = {
     _state: {
         nav: {
@@ -51,8 +59,6 @@ let store = {
         console.log('State changed')
     },
 
-    // -------------------------------------------- //
-
     _addPost() {
         let newPost = {
             id: 5,
@@ -69,8 +75,6 @@ let store = {
         this._state.profile.newPostData = text
         this._callSubscriber(this._state)
     },
-
-    // -------------------------------------------- //
 
     _addMessage() {
         let newMessage = {
@@ -90,20 +94,34 @@ let store = {
         this._callSubscriber = observer
     },
 
-    // -------------------------------------------- //
-
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            this._addPost()
-        } else if (action.type === "UPDATE-NEW-POST-DATA") {
-            this._updateNewPostData(action.text)
-        } else if (action.type === "ADD-MESSAGE") {
-            this._addMessage()
-        } else if (action.type === "UPDATE-NEW-MESSAGE-DATA") {
-            this._updateNewMessageData(action.text)
-        }
+        
+        this._state.profile = profileReducer(this._state.profile, action)
+        this._state.messages = messagesReducer(this._state.messages, action)
+        this._callSubscriber(this._state)
+
     }
 
+}
+
+export const addPostActionCreator = () => {
+    return { type: ADD_POST }
+}
+
+export const updateNewPostDataActionCreator = (text) => {
+    return { type: UPDATE_NEW_POST_DATA, text }
+}
+
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    }
+}
+
+export const updateNewMessageDataActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_DATA, text
+    }
 }
 
 export default store
