@@ -1,11 +1,6 @@
 import messagesReducer from "./messages-reducer"
 import profileReducer from "./profile-reducer"
 
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_DATA = 'UPDATE-NEW-POST-DATA'
-const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_DATA = 'UPDATE-NEW-MESSAGE-DATA'
-
 let store = {
     _state: {
         nav: {
@@ -59,37 +54,6 @@ let store = {
         console.log('State changed')
     },
 
-    _addPost() {
-        let newPost = {
-            id: 5,
-            text: this._state.profile.newPostData,
-            date: "03.01.2022"
-        }
-
-        this._state.profile.postData.push(newPost)
-        this._state.profile.newPostData = ""
-        this._callSubscriber(this._state)
-    },
-
-    _updateNewPostData(text) {
-        this._state.profile.newPostData = text
-        this._callSubscriber(this._state)
-    },
-
-    _addMessage() {
-        let newMessage = {
-            text: this._state.messages.newMessageData,
-        }
-        this._state.messages.messageData.push(newMessage)
-        this._state.messages.newMessageData = ""
-        this._callSubscriber(this._state)
-    },
- 
-    _updateNewMessageData(text) {
-        this._state.messages.newMessageData = text
-        this._callSubscriber(this._state)
-    },
-
     subscribe(observer) {
         this._callSubscriber = observer
     },
@@ -102,26 +66,6 @@ let store = {
 
     }
 
-}
-
-export const addPostActionCreator = () => {
-    return { type: ADD_POST }
-}
-
-export const updateNewPostDataActionCreator = (text) => {
-    return { type: UPDATE_NEW_POST_DATA, text }
-}
-
-export const addMessageActionCreator = () => {
-    return {
-        type: ADD_MESSAGE
-    }
-}
-
-export const updateNewMessageDataActionCreator = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_DATA, text
-    }
 }
 
 export default store
