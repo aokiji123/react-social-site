@@ -18,4 +18,16 @@ const messagesReducer = (state, action) => {
     }
 }
 
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    }
+}
+
+export const updateNewMessageDataActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_DATA, text
+    }
+}
+
 export default messagesReducer
