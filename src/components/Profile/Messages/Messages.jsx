@@ -2,7 +2,6 @@ import React from "react"
 import Message from "./Message/Message"
 import Person from "./Person/Person"
 import style from "./Messages.module.css"
-
 import { addMessageActionCreator, updateNewMessageDataActionCreator } from "../../../redux/store"
 
 const Messages = (props) => {
