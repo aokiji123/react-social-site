@@ -2,18 +2,17 @@ import React from "react"
 import Posts from "./Posts/Posts"
 import ProfilePerson from "./ProfilePerson"
 import style from "./Profile.module.css"
+import { addPostActionCreator, updateNewPostDataActionCreator } from "../../redux/state"
 
 const Profile = (props) => {
-    
-    let newPost = React.createRef()
 
     let addPost = () => {
-        props.dispatch({ type: 'ADD-POST' })
+        props.dispatch(addPostActionCreator())
     }
 
-    let onPostChange = () => {
-        let text = newPost.current.value
-        props.dispatch({ type: 'UPDATE-NEW-POST-DATA', text })
+    let onPostChange = (event) => {
+        let text = event.target.value
+        props.dispatch(updateNewPostDataActionCreator(text))
     }
 
     return (
@@ -23,7 +22,7 @@ const Profile = (props) => {
 
             <section>
                 <form action="" type="submit">
-                    <input className="input" type="text" placeholder="Add new post" ref={newPost} onChange={onPostChange} value={props.state.newPostData} />
+                    <input className="input" type="text" placeholder="Add new post" onChange={onPostChange} value={props.state.newPostData} />
                     <button onClick={addPost} className="button" type="button"> &#10003; </button>
                 </form>
             </section>
