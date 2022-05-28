@@ -11,22 +11,14 @@ import { Route, Routes } from 'react-router-dom'
 const App = (props) => {
 	return (
 		<div className={styles.page}>
-
 			<Header/>
-
 			<Nav state={props.state.nav}/>
-
 			<div className={styles.grid}>
 				<Routes>
-					<Route path="/profile/*" element={<Profile
-													    state={props.state.profile}
-														dispatch={props.dispatch}/>}/>
-					<Route path="/messages/*" element={<Messages
-														state={props.state.messages}
-														dispatch={props.dispatch}/>}/>
+					<Route path="/profile/*" element={<Profile state={props.state.profile} dispatch={props.dispatch}/>}/>
+					<Route path="/messages/*" element={<Messages state={props.state.messages} dispatch={props.dispatch}/>}/>
 				</Routes>
 			</div>
-			
 		</div>
 	)
 } 
