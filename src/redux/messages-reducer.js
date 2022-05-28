@@ -1,7 +1,28 @@
 const ADD_MESSAGE = 'ADD-MESSAGE'
 const UPDATE_NEW_MESSAGE_DATA = 'UPDATE-NEW-MESSAGE-DATA'
 
-const messagesReducer = (state, action) => {
+let initialState = {
+        peopleData: [
+            {name: "Den", url: "den"},
+            {name: "Mike", url: "mike"},
+            {name: "Rebbeka", url: "rebbeka"},
+            {name: "Jesse", url: "jesse"},
+            {name: "Clam", url: "clam"},
+            {name: "Kate", url: "kate"},
+            {name: "Vanessa", url: "vanessa"}
+        ],
+    
+        messageData: [
+            {text: "hi mate how are you?"},
+            {text: "hello"},
+            {text: "well i'm kinda boring, try to take some rest watching youtube"},
+            {text: "today was studying a lot"},
+        ],
+
+        newMessageData: ""
+}
+
+const messagesReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_MESSAGE:
             let newMessage = {
