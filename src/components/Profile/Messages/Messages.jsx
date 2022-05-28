@@ -7,8 +7,8 @@ import { addMessageActionCreator, updateNewMessageDataActionCreator } from "../.
 
 const Messages = (props) => {
     
-    let people = props.state.peopleData.map((person) => <Person name={person.name} url={person.url}/> )
-    let messages = props.state.messageData.map((message) => <Message text={message.text}/>)
+    let people = props.state.peopleData.map((person, index) => <Person key={person.name + index} name={person.name} url={person.url}/> )
+    let messages = props.state.messageData.map((message, index) => <Message key={message.text + index } text={message.text}/>)
 
     let addMessage = () => {
         props.dispatch(addMessageActionCreator())

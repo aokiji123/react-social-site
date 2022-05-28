@@ -8,9 +8,11 @@ const Profile = (props) => {
 
     let addPost = () => {
         props.dispatch(addPostActionCreator())
+        // props.addPost()
     }
 
     let onPostChange = (event) => {
+        // props.updateNewPostText()
         let text = event.target.value
         props.dispatch(updateNewPostDataActionCreator(text))
     }
